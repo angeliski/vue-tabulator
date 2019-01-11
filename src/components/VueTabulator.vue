@@ -1,5 +1,9 @@
 <template>
-  <div class="tabulator" ref="table" v-if="tabulatorInstance"></div>
+  <div
+    v-if="tabulatorInstance"
+    ref="table"
+    class="tabulator"
+  />
 </template>
 
 
@@ -10,7 +14,7 @@ import Tabulator from 'tabulator-tables';
 @Component
 export default class VueTabulator extends Vue {
   @Prop({ default: () => [] })
-  public value?: any[];
+  public value?: Array<any>;
 
   @Prop({ default: () => [] })
   public tableData?: any[];

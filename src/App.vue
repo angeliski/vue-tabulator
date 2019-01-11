@@ -1,7 +1,13 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <VueTabulator v-model="data" :options="options"/>
+    <img
+      alt="Vue logo"
+      src="./assets/logo.png"
+    >
+    <VueTabulator
+      v-model="data"
+      :options="options"
+    />
   </div>
 </template>
 

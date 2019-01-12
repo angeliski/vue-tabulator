@@ -7,4 +7,4 @@ cache:
     - ~/.cache
 script:
   - npm run test:unit
-  - npm run test:e2e
+  - npm run test:e2e -- --headless

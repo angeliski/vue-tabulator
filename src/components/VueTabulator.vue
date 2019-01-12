@@ -8,7 +8,9 @@
 
 
 <script lang='ts'>
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import {
+  Component, Prop, Vue, Watch,
+} from 'vue-property-decorator';
 import Tabulator from 'tabulator-tables';
 
 @Component
@@ -26,16 +28,26 @@ export default class VueTabulator extends Vue {
 
   private resolvedOptions: any = {};
 
-  mounted() {
+  @Watch('value', { deep: true })
+  private createTable() {
+    this.tabulatorInstance = new Tabulator(
+      this.$refs.table,
+      this.resolvedOptions,
+    );
+  }
+
+  @Watch('options', { deep: true })
+  updateOptions() {
     this.resolvedOptions = {
       ...this.options,
       data: this.value,
     };
 
-    this.tabulatorInstance = new Tabulator(
-      this.$refs.table,
-      this.resolvedOptions,
-    );
+    this.createTable();
+  }
+
+  mounted() {
+    this.updateOptions();
   }
 }
 </script>

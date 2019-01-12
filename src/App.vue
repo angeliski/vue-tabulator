@@ -8,6 +8,19 @@
       v-model="data"
       :options="options"
     />
+
+    <button
+      id="row"
+      @click="newRow"
+    >
+      New Row
+    </button>
+    <button
+      id="column"
+      @click="newColumn"
+    >
+      New Column
+    </button>
   </div>
 </template>
 
@@ -21,7 +34,7 @@ import VueTabulator from './components/VueTabulator.vue';
   },
 })
 export default class App extends Vue {
-  public data = [{ name: 'Teste' }];
+  public data = [{ name: 'Teste', age: 13 }];
 
   public options = {
     columns: [
@@ -34,6 +47,20 @@ export default class App extends Vue {
       },
     ],
   };
+
+  newRow() {
+    this.data.push({ name: 'Teste 2', age: 15 });
+  }
+
+  newColumn() {
+    this.options.columns.push({
+      title: 'age',
+      field: 'age',
+      sorter: 'number',
+      width: 300,
+      editor: false,
+    });
+  }
 }
 </script>
 

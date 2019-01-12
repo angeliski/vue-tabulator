@@ -1,7 +1,7 @@
 {
   "name": "vue-tabulator",
   "description": "Vue JS Wrapper to lib Tabulator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "release": "release-it",
     "serve": "vue-cli-service serve",

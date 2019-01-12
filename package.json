@@ -1,13 +1,40 @@
 {
   "name": "vue-tabulator",
-  "version": "0.1.0",
-  "private": true,
+  "description": "Vue JS Wrapper to lib Tabulator",
+  "version": "0.0.1",
   "scripts": {
+    "release": "release-it",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "vue-cli-service build --target lib --name vue-tabulator src/entry.ts",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angeliski/vue-tabulator"
+  },
+  "keywords": [
+    "table",
+    "grid",
+    "datagrid",
+    "tabulator",
+    "editable",
+    "cookie",
+    "sort",
+    "format",
+    "resizable",
+    "list",
+    "scrollable",
+    "ajax",
+    "json",
+    "widget",
+    "vue"
+  ],
+  "author": "Rogerio Angeliski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/olifolkerd/tabulator/issues"
   },
   "dependencies": {
     "tabulator-tables": "^4.1.5",
@@ -32,11 +59,21 @@
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.0",
     "node-sass": "^4.9.0",
+    "release-it": "^9.7.1",
     "sass-loader": "^7.0.1",
     "ts-jest": "^23.0.0",
     "typescript": "~3.1.1",
     "vue-template-compiler": "^2.5.21"
   },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js",
+    "*.ts"
+  ],
+  "main": "./dist/vue-tabulator.umd.min.js",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },

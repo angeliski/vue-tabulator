@@ -1,4 +1,6 @@
 # vue-tabulator
+Work in Progress. 
+PR are welcome.
 
 ## Project setup
 ```

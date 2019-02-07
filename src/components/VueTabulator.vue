@@ -9,7 +9,7 @@
 
 <script lang='ts'>
 import {
-  Component, Prop, Vue, Watch,
+  Component, Prop, Vue, Watch, Model,
 } from 'vue-property-decorator';
 import Tabulator from 'tabulator-tables';
 
@@ -17,11 +17,8 @@ import Tabulator from 'tabulator-tables';
   name: 'VueTabulator',
 })
 export default class VueTabulator extends Vue {
-  @Prop({ default: () => [] })
-  public value?: Array<any>;
-
-  @Prop({ default: () => [] })
-  public tableData?: any[];
+  @Model('change', { default: () => [] })
+  public tableData?: Array<any>;
 
   private tabulatorInstance: any = {};
 
@@ -30,7 +27,11 @@ export default class VueTabulator extends Vue {
 
   private resolvedOptions: any = {};
 
-  @Watch('value', { deep: true })
+  public getInstance() {
+    return this.tabulatorInstance;
+  }
+
+  @Watch('tableData', { deep: true })
   private createTable() {
     this.tabulatorInstance = new Tabulator(
       this.$refs.table,
@@ -39,14 +40,16 @@ export default class VueTabulator extends Vue {
   }
 
   @Watch('options', { deep: true })
-  updateOptions() {
+  private updateOptions() {
     this.resolvedOptions = {
       ...this.options,
-      data: this.value,
+      data: this.tableData,
     };
 
     this.createTable();
   }
+
+
 
   mounted() {
     this.updateOptions();

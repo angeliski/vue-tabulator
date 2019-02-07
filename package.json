@@ -1,7 +1,7 @@
 {
   "name": "vue-tabulator",
   "description": "Vue JS Wrapper to lib Tabulator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "scripts": {
     "release": "release-it",
     "serve": "vue-cli-service serve",
@@ -73,18 +73,5 @@
     "*.js",
     "*.ts"
   ],
-  "main": "./dist/vue-tabulator.umd.min.js",
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.js": [
-      "vue-cli-service lint",
-      "git add"
-    ],
-    "*.vue": [
-      "vue-cli-service lint",
-      "git add"
-    ]
-  }
+  "main": "./dist/vue-tabulator.umd.min.js"
 }

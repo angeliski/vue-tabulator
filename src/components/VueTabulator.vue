@@ -13,7 +13,9 @@ import {
 } from 'vue-property-decorator';
 import Tabulator from 'tabulator-tables';
 
-@Component
+@Component({
+  name: 'VueTabulator',
+})
 export default class VueTabulator extends Vue {
   @Prop({ default: () => [] })
   public value?: Array<any>;

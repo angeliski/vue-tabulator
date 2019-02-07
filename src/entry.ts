@@ -4,7 +4,7 @@ import VueTabulator from '@/components/VueTabulator.vue';
 export { VueTabulator };
 
 export default {
-    install(VueApp: typeof Vue) {
-      VueApp.component(VueTabulator.name, VueTabulator);
-    },
-  };
+  install(VueApp: typeof Vue) {
+    VueApp.component(VueTabulator.name, VueTabulator);
+  },
+};

@@ -5,6 +5,6 @@ export { VueTabulator };
 
 export default {
   install(VueApp: typeof Vue) {
-    VueApp.component(VueTabulator.name, VueTabulator);
+    VueApp.component('VueTabulator', VueTabulator);
   },
 };

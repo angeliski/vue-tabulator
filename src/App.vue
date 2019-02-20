@@ -21,6 +21,12 @@
     >
       New Column
     </button>
+    <button
+      id="clear"
+      @click="clear"
+    >
+      Clear Data
+    </button>
   </div>
 </template>
 
@@ -60,6 +66,10 @@ export default class App extends Vue {
       width: 300,
       editor: false,
     });
+  }
+  
+  clear() {
+    this.data = [];
   }
 }
 </script>

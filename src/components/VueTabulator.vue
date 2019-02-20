@@ -31,7 +31,6 @@ export default class VueTabulator extends Vue {
     return this.tabulatorInstance;
   }
 
-  @Watch('tableData', { deep: true })
   private createTable() {
     this.tabulatorInstance = new Tabulator(
       this.$refs.table,
@@ -39,6 +38,7 @@ export default class VueTabulator extends Vue {
     );
   }
 
+  @Watch('tableData', { deep: true })
   @Watch('options', { deep: true })
   private updateOptions() {
     this.resolvedOptions = {
@@ -48,8 +48,6 @@ export default class VueTabulator extends Vue {
 
     this.createTable();
   }
-
-
 
   mounted() {
     this.updateOptions();

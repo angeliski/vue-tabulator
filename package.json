@@ -40,9 +40,11 @@
   "dependencies": {
     "copy-webpack-plugin": "^4.6.0",
     "tabulator-tables": "^4.1.5",
-    "vue": "^2.5.21",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0"
+  },
+  "peerDependencies": {
+    "vue": "^2.5.21"
   },
   "devDependencies": {
     "@types/jest": "^23.1.4",
@@ -75,5 +77,6 @@
     "*.js",
     "*.ts"
   ],
-  "main": "./dist/vue-tabulator.umd.min.js"
+  "main": "./dist/vue-tabulator.umd.js",
+  "browser": "./dist/vue-tabulator.common.js"
 }

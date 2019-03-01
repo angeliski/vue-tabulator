@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "copy-webpack-plugin": "^4.6.0",
-    "tabulator-tables": "^4.1.5",
+    "tabulator-tables": "4.2.1",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0",
     "vuepress": "^0.14.9"

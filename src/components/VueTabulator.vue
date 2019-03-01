@@ -38,10 +38,11 @@ export default class VueTabulator extends Vue {
     );
   }
 
-  @Watch('tableData', { deep: true })
+  @Watch('tableData')
   @Watch('options', { deep: true })
   private updateOptions() {
     this.resolvedOptions = {
+      reactiveData: true,
       ...this.options,
       data: this.tableData,
     };

@@ -10,6 +10,13 @@
     />
 
     <button
+      id="update"
+      @click="updateRow"
+    >
+      Update Row
+    </button>
+
+    <button
       id="row"
       @click="newRow"
     >
@@ -54,6 +61,10 @@ export default class App extends Vue {
     ],
   };
 
+  updateRow() {
+    this.data[0].name = 'Name updated';
+  }
+
   newRow() {
     this.data.push({ name: 'Teste 2', age: 15 });
   }
@@ -67,7 +78,7 @@ export default class App extends Vue {
       editor: false,
     });
   }
-  
+
   clear() {
     this.data = [];
   }

@@ -3,7 +3,8 @@
 Work in Progress.
 PR are welcome.
 
-#Getting Started
+# Getting Started
+
 Install vue-tabulator using [`npm`](https://www.npmjs.com/package/vue-tabulator):
 
 ```bash
@@ -54,7 +55,7 @@ The only option isn't allowed is the _data_ because the data will be receive is 
 
 Note: The object options use the Vue [watcher](https://vuejs.org/v2/guide/computed.html#Watchers), so if you update any configuration, the Tabulator will be recreated using the new config.
 
-##Develop Contributing
+## Develop Contributing
 
 ### Project setup
 

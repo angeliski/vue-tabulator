@@ -3,6 +3,10 @@
 Work in Progress.
 PR are welcome.
 
+# Documentation
+
+You can see the full documentation in: [https://angeliski.github.io/vue-tabulator/](https://angeliski.github.io/vue-tabulator/).
+
 # Getting Started
 
 The vue-tabulator is a wrapper to Tabulator, so you need [install the tabulator](http://tabulator.info/docs/4.2/install#sources-npm) to use vue-tabulator.

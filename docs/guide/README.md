@@ -70,3 +70,24 @@ Note: The object options use the Vue [watcher](https://vuejs.org/v2/guide/comput
 ## v-model
 
 You can provide a array to populate your table, the component will use the [data property](http://tabulator.info/docs/4.2/data#array-initial) to initialize the Tabulator. Any change performed in your v-mode will be reflected in the component, using the [Tabulator reactivity](http://tabulator.info/docs/4.2/reactivity) and Vue [watcher](https://vuejs.org/v2/guide/computed.html#Watchers).
+
+## Advanced Interaction
+
+In some cases you will be need use a feature provided by the Tabulator, but not supported by the vue-tabulator. If you need some like that, you can use the tabulator instance from your component.
+
+Using the [ref](https://vuejs.org/v2/api/#ref) in your component
+
+```html{2}
+<VueTabulator ref="tabulator" v-model="data" :options="options" />
+```
+
+You have access to method <code>getInstance</code> who will return the Tabulator instance.
+
+```javascript{1}
+const tabulatorInstance = this.$refs.tabulator.getInstance();
+tabulatorInstance.clearData();
+```
+
+::: warning be careful
+When use the Tabulator instance will can broke some behaviors in the vue-tabulator. That can happening because the Tabulator is a JavaScript library and the vue-tabulator is a wrapper for that lib to more easyly use in vue.
+:::

@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import TabulatorComponent from '@/components/TabulatorComponent.vue';
+import GridBuilder from '@/providers/grid-builder';
 
-export { TabulatorComponent };
+export { TabulatorComponent, GridBuilder };
 
 export default {
   install(VueApp: typeof Vue, options: any = {}) {

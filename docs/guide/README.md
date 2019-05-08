@@ -1,7 +1,8 @@
 # Introduction
 
-::: danger
-The vue-tabulator is not production ready.
+::: warning
+The vue-tabulator is in [release candidate](https://en.wikipedia.org/wiki/Software_release_life_cycle#Release_candidate).
+
 PR are welcome.
 :::
 The lib [Tabulator](http://tabulator.info/) is great, because is pure JavaScript, but sometimes when using vue-apps we need a better, simple integration, like [reactive data](http://tabulator.info/docs/4.2/release#reactive-data), events, components editors and other things.
@@ -29,7 +30,7 @@ yarn add --dev jest
 ::: tip
 Vue-tabulator documentation uses `npm` commands, but `yarn` will also work. You can compare `yarn` and `npm` commands in the [yarn docs, here](https://yarnpkg.com/en/docs/migrating-from-npm#toc-cli-commands-comparison).
 :::
-Then, register vue-tabulaor plugin in your app entry point:
+Then register vue-tabulator plugin in your app entry point:
 
 ```javascript
 import Vue from 'vue';
@@ -37,6 +38,10 @@ import VueTabulator from 'vue-tabulator';
 
 Vue.use(VueTabulator);
 ```
+
+::: tip Note
+Import the scss files is not required, but If you import, should configure your project to compile to css.
+:::
 
 And import theme scss files:
 
@@ -48,10 +53,6 @@ And import theme scss files:
 </style>
 ```
 
-::: tip Note
-Import the scss files is not required, but If you import, should configure your project to compile to css.
-:::
-
 In your component, you can use the VueTabulator component:
 
 ```html
@@ -59,13 +60,39 @@ In your component, you can use the VueTabulator component:
 ```
 
 The v-model and the options are required and you can use the pass the content of table and the configuration, respectively.
+You can change the component name on plugin install:
+
+```javascript
+import Vue from 'vue';
+import VueTabulator from 'vue-tabulator';
+
+Vue.use(VueTabulator, {
+    name: 'AwesomeTable'
+});
+```
+Or register the component only in your component: 
+
+
+```javascript
+import { TabulatorComponent } from "vue-tabulator";
+
+export default {
+  name: "home",
+  components: {
+    'AwesomeLocalTable': TabulatorComponent
+  },
+  
+};
+```
 
 ## Options
 
 The current options object can accept any [Tabulator options](http://tabulator.info/docs/4.2/options), that allow you to use the full power of Tabulator on start or configuration.
 The only option isn't allowed is the [_data_](http://tabulator.info/docs/4.2/data#array-initial) because the data will be receive is the v-model.
 
-Note: The object options use the Vue [watcher](https://vuejs.org/v2/guide/computed.html#Watchers), so if you update any configuration, the Tabulator will be recreated using the new config.
+:::tip Watchers
+The object options use the Vue [watcher](https://vuejs.org/v2/guide/computed.html#Watchers), so if you update any configuration, the Tabulator will be recreated using the new config.
+:::
 
 ## v-model
 

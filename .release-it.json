@@ -8,5 +8,8 @@
       "tagName": "v%s",
       "commitMessage": "chore(release): %s",
       "addUntrackedFiles": true
+    },
+    "github": {
+      "release": true
     }
   }

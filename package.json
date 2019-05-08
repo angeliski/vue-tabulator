@@ -4,6 +4,7 @@
   "version": "0.0.9",
   "scripts": {
     "release": "release-it",
+    "release:rc": "npm run release -- --preRelease=rc",
     "release:patch": "npm run release -- patch -n",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vue-tabulator src/entry.ts",

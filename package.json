@@ -1,7 +1,7 @@
 {
   "name": "vue-tabulator",
   "description": "The best way to use Tabulator in Vue projects",
-  "version": "0.0.9",
+  "version": "1.0.0-rc.0",
   "scripts": {
     "release": "release-it",
     "release:rc": "npm run release -- --preRelease=rc",

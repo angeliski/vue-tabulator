@@ -14,9 +14,9 @@ import {
 import Tabulator from 'tabulator-tables';
 
 @Component({
-  name: 'VueTabulator',
+  name: 'TabulatorComponent',
 })
-export default class VueTabulator extends Vue {
+export default class TabulatorComponent extends Vue {
   @Model('change', { default: () => [] })
   public tableData?: Array<any>;
 
@@ -55,7 +55,3 @@ export default class VueTabulator extends Vue {
   }
 }
 </script>
-
-
-<style lang='scss'>
-</style>

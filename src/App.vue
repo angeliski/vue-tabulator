@@ -39,7 +39,7 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import VueTabulator from './components/VueTabulator.vue';
+import VueTabulator from './components/TabulatorComponent.vue';
 
 @Component({
   components: {

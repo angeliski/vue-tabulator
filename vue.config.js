@@ -17,9 +17,6 @@ module.exports = {
     });
   },
   configureWebpack: {
-    output: {
-      libraryExport: 'default',
-    },
     plugins: [new CopyWebpackPlugin([{ from: 'src/scss', to: 'scss' }])],
   },
 };

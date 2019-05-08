@@ -1,10 +1,11 @@
 import Vue from 'vue';
-import VueTabulator from '@/components/VueTabulator.vue';
+import TabulatorComponent from '@/components/TabulatorComponent.vue';
 
-export { VueTabulator };
+export { TabulatorComponent };
 
 export default {
-  install(VueApp: typeof Vue) {
-    VueApp.component('VueTabulator', VueTabulator);
+  install(VueApp: typeof Vue, options: any = {}) {
+    const name = options.name || 'VueTabulator';
+    VueApp.component(name, TabulatorComponent);
   },
 };

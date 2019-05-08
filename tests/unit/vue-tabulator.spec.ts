@@ -1,8 +1,8 @@
 import { shallowMount } from '@vue/test-utils';
-import VueTabulator from '@/components/VueTabulator.vue';
+import TabulatorComponent from '@/components/TabulatorComponent.vue';
 import Vue from 'vue';
 
-describe('VueTabulator.vue', () => {
+describe('TabulatorComponent.vue', () => {
   it('renders correct based in the options', () => {
     const options = {
       columns: [
@@ -16,7 +16,7 @@ describe('VueTabulator.vue', () => {
       ],
     };
 
-    const wrapper = shallowMount(VueTabulator, {
+    const wrapper = shallowMount(TabulatorComponent, {
       propsData: {
         options,
       },

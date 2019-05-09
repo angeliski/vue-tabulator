@@ -42,6 +42,7 @@
     "url": "https://github.com/olifolkerd/tabulator/issues"
   },
   "dependencies": {
+    "@types/tabulator-tables": "^4.2.4",
     "tabulator-tables": "^4.2.2",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0"

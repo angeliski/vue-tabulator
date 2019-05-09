@@ -1,1 +1,1 @@
-declare module 'tabulator-tables';
+// declare module 'tabulator-tables';

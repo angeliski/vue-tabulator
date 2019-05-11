@@ -18,13 +18,13 @@ The vue-tabulator is a wrapper to Tabulator, so you need [install the tabulator]
 Install vue-tabulator using [`npm`](https://www.npmjs.com/package/vue-tabulator):
 
 ```bash
-npm install --save vue-tabulator
+npm install --save vue-tabulator@rc
 ```
 
 Or [`yarn`](https://yarnpkg.com/en/package/vue-tabulator):
 
 ```bash
-yarn add vue-tabulator
+yarn add vue-tabulator@rc
 ```
 
 ::: tip

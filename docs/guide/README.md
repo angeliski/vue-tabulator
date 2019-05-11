@@ -59,7 +59,7 @@ In your component, you can use the VueTabulator component:
 <VueTabulator v-model="data" :options="options" />
 ```
 
-The v-model and the options are required and you can use the pass the content of table and the configuration, respectively.
+The v-model and the options are required and you can use to pass the content of table and the configuration, respectively.
 You can change the component name on plugin install:
 
 ```javascript
@@ -93,10 +93,33 @@ The only option isn't allowed is the [_data_](http://tabulator.info/docs/4.2/dat
 :::tip Watchers
 The object options use the Vue [watcher](https://vuejs.org/v2/guide/computed.html#Watchers), so if you update any configuration, the Tabulator will be recreated using the new config.
 :::
+:::warning Reactive options
+The watcher from options will recreate the tabulator instance when the options is updated.
+:::
 
 ## v-model
 
-You can provide a array to populate your table, the component will use the [data property](http://tabulator.info/docs/4.2/data#array-initial) to initialize the Tabulator. Any change performed in your v-mode will be reflected in the component, using the [Tabulator reactivity](http://tabulator.info/docs/4.2/reactivity) and Vue [watcher](https://vuejs.org/v2/guide/computed.html#Watchers).
+You can provide a array to populate your table, the component will use the [data property](http://tabulator.info/docs/4.2/data#array-initial) to initialize the Tabulator. Any change performed in your v-mode will be reflected in the component, not using the [Tabulator reactivity](http://tabulator.info/docs/4.2/reactivity) but the Vue [watcher](https://vuejs.org/v2/guide/computed.html#Watchers).
+
+The Watcher will use the method [setData](http://tabulator.info/docs/4.2/data#array) to update. If you prefer, you can change that behavior witch integration option.
+
+## Integration
+The integration options can provide a custom experience when use vue-tabulator, 
+that options will provide a better way to change the internal behavior.
+
+### updateStrategy
+
+The update strategy is the responsible to update the data in the Tabulator instance. The default value is `DATA`.
+
+You can change to `REPLACE`, to use the method [setReplace](http://tabulator.info/docs/4.2/update#alter-replace).
+
+```html
+<VueTabulator 
+        v-model="data" 
+        :options="options" 
+        :integration="{ updateStrategy: 'REPLACE' }" 
+  />
+```
 
 ## Advanced Interaction
 
@@ -108,7 +131,7 @@ Using the [ref](https://vuejs.org/v2/api/#ref) in your component
 <VueTabulator ref="tabulator" v-model="data" :options="options" />
 ```
 
-You have access to method <code>getInstance</code> who will return the Tabulator instance.
+You have access to method `getInstance` who will return the Tabulator instance.
 
 ```javascript{1}
 const tabulatorInstance = this.$refs.tabulator.getInstance();
@@ -118,3 +141,7 @@ tabulatorInstance.clearData();
 ::: warning be careful
 When use the Tabulator instance will can broke some behaviors in the vue-tabulator. That can happening because the Tabulator is a JavaScript library and the vue-tabulator is a wrapper for that lib to more easyly use in vue.
 :::
+## Caveats
+- [Tabulator reactivity](http://tabulator.info/docs/4.2/reactivity)
+
+When in development we expected some strange behaviors on active the Tabulator Reactivity module, how Vue have a [reactivity system](https://it.vuejs.org/v2/guide/reactivity.html), we believe is not necessary activate the Tabulator reactivity.

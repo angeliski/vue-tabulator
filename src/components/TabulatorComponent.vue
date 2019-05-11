@@ -54,7 +54,6 @@ export default class TabulatorComponent extends Vue {
 
   @Watch('tableData', { deep: true })
   private updateData() {
-    console.log(this.integration);
     if (this.tabulatorInstance) {
       if (this.integration && this.integration.updateStrategy === UpdateStrategy.REPLACE) {
         this.tabulatorInstance.replaceData(this.tableData);

@@ -24,7 +24,7 @@ npm install --save vue-tabulator
 Or [`yarn`](https://yarnpkg.com/en/package/vue-tabulator):
 
 ```bash
-yarn add --dev jest
+yarn add vue-tabulator
 ```
 
 ::: tip

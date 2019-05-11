@@ -1,6 +1,5 @@
 <template>
   <div
-    v-if="tabulatorInstance"
     ref="table"
     class="tabulator"
   />
@@ -11,7 +10,8 @@
 import {
   Component, Prop, Vue, Watch, Model,
 } from 'vue-property-decorator';
-import Tabulator from 'tabulator-tables';
+
+const Tabulator = require('tabulator-tables');
 
 @Component({
   name: 'TabulatorComponent',
@@ -20,12 +20,12 @@ export default class TabulatorComponent extends Vue {
   @Model('change', { default: () => [] })
   public tableData?: Array<any>;
 
-  private tabulatorInstance: any = {};
+  private tabulatorInstance: Tabulator | null = null;
 
   @Prop({ default: () => ({}) })
-  private options: any;
+  private options?: Tabulator.Options;
 
-  private resolvedOptions: any = {};
+  private resolvedOptions: Tabulator.Options = {};
 
   public getInstance() {
     return this.tabulatorInstance;

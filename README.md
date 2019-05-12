@@ -1,7 +1,6 @@
-# ![logo](./docs/.vuepress/public/assets/img/logo.png)
+[![Build Status](https://travis-ci.org/angeliski/vue-tabulator.svg?branch=master)](https://travis-ci.org/angeliski/vue-tabulator) [![Coverage Status](https://coveralls.io/repos/github/angeliski/vue-tabulator/badge.svg?branch=master)](https://coveralls.io/github/angeliski/vue-tabulator?branch=master)
 
-Work in Progress.
-PR are welcome.
+# ![logo](./docs/.vuepress/public/assets/img/logo.png)
 
 # Documentation
 

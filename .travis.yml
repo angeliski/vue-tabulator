@@ -12,3 +12,4 @@ cache:
     - ~/.cache
 script:
   - npm run test
+  - npm run coveralls

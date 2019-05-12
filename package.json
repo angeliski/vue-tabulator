@@ -7,13 +7,20 @@
     "release:rc": "npm run release -- --preRelease=rc",
     "release:patch": "npm run release -- patch -n",
     "serve": "vue-cli-service serve",
+    "dev": "npm run serve",
     "build": "vue-cli-service build --target lib --name vue-tabulator src/entry.ts",
     "lint": "vue-cli-service lint",
-    "test:e2e": "vue-cli-service test:e2e --mode development",
+    "test": "npm run lint && npm run test:unit && npm run test:e2e",
+    "test:e2e": "npm run test:e2e:local -- --headless",
+    "test:e2e:local": "vue-cli-service test:e2e --mode development",
     "test:unit": "vue-cli-service test:unit",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "docs:publish": "./scripts/deploy.sh"
+    "docs:publish": "./scripts/deploy.sh",
+    "commit": "git-cz"
+  },
+  "gitHooks": {
+    "commit-msg": "node scripts/verify-commit-msg.js"
   },
   "repository": {
     "type": "git",
@@ -39,7 +46,7 @@
   "author": "Rogerio Angeliski",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/olifolkerd/tabulator/issues"
+    "url": "https://github.com/angeliski/vue-tabulator/issues"
   },
   "dependencies": {
     "@types/tabulator-tables": "^4.2.4",
@@ -64,7 +71,10 @@
     "@vue/test-utils": "^1.0.0-beta.20",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
+    "chalk": "^2.4.2",
+    "commitizen": "^3.1.1",
     "copy-webpack-plugin": "^4.6.0",
+    "cz-conventional-changelog": "2.1.0",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.0",
@@ -74,7 +84,8 @@
     "ts-jest": "^23.0.0",
     "typescript": "~3.1.1",
     "vue-template-compiler": "^2.6.8",
-    "vuepress": "^0.14.9"
+    "vuepress": "^0.14.9",
+    "yorkie": "^2.0.0"
   },
   "files": [
     "dist/*",
@@ -85,5 +96,10 @@
     "*.ts"
   ],
   "main": "./dist/vue-tabulator.umd.js",
-  "browser": "./dist/vue-tabulator.common.js"
+  "browser": "./dist/vue-tabulator.common.js",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

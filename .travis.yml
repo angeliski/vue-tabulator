@@ -11,5 +11,4 @@ cache:
   directories:
     - ~/.cache
 script:
-  - npm run test:unit
-  - npm run test:e2e -- --headless
+  - npm run test

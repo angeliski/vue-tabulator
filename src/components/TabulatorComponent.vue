@@ -10,6 +10,7 @@
 import {
   Component, Prop, Vue, Watch, Model,
 } from 'vue-property-decorator';
+import { IntegrationOptions, UpdateStrategy } from '@/types';
 
 const Tabulator = require('tabulator-tables');
 
@@ -25,6 +26,9 @@ export default class TabulatorComponent extends Vue {
   @Prop({ default: () => ({}) })
   private options?: Tabulator.Options;
 
+  @Prop({ default: () => ({ updateStrategy: UpdateStrategy.DATA }) })
+  private integration?: IntegrationOptions;
+
   private resolvedOptions: Tabulator.Options = {};
 
   public getInstance() {
@@ -38,16 +42,25 @@ export default class TabulatorComponent extends Vue {
     );
   }
 
-  @Watch('tableData')
   @Watch('options', { deep: true })
   private updateOptions() {
     this.resolvedOptions = {
-      reactiveData: true,
       ...this.options,
       data: this.tableData,
     };
 
     this.createTable();
+  }
+
+  @Watch('tableData', { deep: true })
+  private updateData() {
+    if (this.tabulatorInstance) {
+      if (this.integration && this.integration.updateStrategy === UpdateStrategy.REPLACE) {
+        this.tabulatorInstance.replaceData(this.tableData);
+      } else {
+        this.tabulatorInstance.setData(this.tableData);
+      }
+    }
   }
 
   mounted() {

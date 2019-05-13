@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TabulatorComponent.vue renders correct based in the options 1`] = `
+exports[`TabulatorComponent.vue Init table renders correct based in the options 1`] = `
 <div class="tabulator" role="grid" tabulator-layout="fitData">
   <div class="tabulator-header" style="padding-right: 0px;">
     <div class="tabulator-headers" style="margin-left: 0px;">

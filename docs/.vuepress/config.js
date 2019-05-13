@@ -1,5 +1,4 @@
 module.exports = {
-  base: '/vue-tabulator/',
   title: 'Vue Tabulator',
   description: 'The best way to use Tabulator in Vue projects',
   themeConfig: {

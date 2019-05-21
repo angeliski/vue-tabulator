@@ -4,7 +4,7 @@
 
 # Documentation
 
-You can see the full documentation in: [https://angeliski.github.io/vue-tabulator/](https://angeliski.github.io/vue-tabulator/).
+You can see the full documentation in: [https://vue-tabulator.netlify.com/](https://vue-tabulator.netlify.com/).
 
 # Getting Started
 
@@ -53,57 +53,8 @@ In your component, you can use the VueTabulator component:
 
 The v-model and the options are required and you can use the pass the content of table and the configuration, respectively.
 
-# Options
-
-The current options object can accept any [Tabulator options](http://tabulator.info/docs/4.2/options), that allow you to use the full power of Tabulator on start or configuration.
-The only option isn't allowed is the [_data_](http://tabulator.info/docs/4.2/data#array-initial) because the data will be receive is the v-model.
-
-Note: The object options use the Vue [watcher](https://vuejs.org/v2/guide/computed.html#Watchers), so if you update any configuration, the Tabulator will be recreated using the new config.
-
-# v-model
-
-You can provide a array to populate your table, the component will use the [data property](http://tabulator.info/docs/4.2/data#array-initial) to initialize the Tabulator. Any change performed in your v-mode will be reflected in the component, using the [Tabulator reactivity](http://tabulator.info/docs/4.2/reactivity) and Vue [watcher](https://vuejs.org/v2/guide/computed.html#Watchers).
+You can see another docs in [documetation](https://vue-tabulator.netlify.com/).
 
 ## Develop Contributing
 
-### Project setup
-
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-
-```
-npm run build
-```
-
-### Run your tests
-
-```
-npm run test
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Run your end-to-end tests
-
-```
-npm run test:e2e
-```
-
-### Run your unit tests
-
-```
-npm run test:unit
-```
+See [CONTRIBUTING](./.github/CONTRIBUTING).

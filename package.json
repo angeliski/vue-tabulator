@@ -50,7 +50,9 @@
     "url": "https://github.com/angeliski/vue-tabulator/issues"
   },
   "dependencies": {
+    "@types/lodash.mergewith": "^4.6.6",
     "@types/tabulator-tables": "^4.2.4",
+    "lodash.mergewith": "^4.6.2",
     "tabulator-tables": "^4.2.2",
     "vue-class-component": "^6.0.0",
     "vue-property-decorator": "^7.0.0"

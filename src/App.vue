@@ -59,6 +59,9 @@ export default class App extends Vue {
         editor: true,
       },
     ],
+      rowClick: function(e: Event, row: Tabulator.RowComponent) {
+        console.log('I clicked a row',this,e,row)
+      }
   };
 
   updateRow() {

@@ -12,7 +12,10 @@ import {
 } from 'vue-property-decorator';
 import { IntegrationOptions, UpdateStrategy } from '@/types';
 import mergeWith from 'lodash.mergewith'
-import joint from '../utilities/joint'
+import merge from '../utilities/merge'
+import eventFactory from '../assets/js/event-factory'
+import cellEvents from '../assets/js/cell-events'
+import rowEvents from '../assets/js/row-events'
 const Tabulator = require('tabulator-tables');
 
 @Component({
@@ -24,56 +27,9 @@ export default class TabulatorComponent extends Vue {
 
   private tabulatorInstance: Tabulator | null = null;
 
-  get eventOptions(): object { 
-    const vm = this
-    return {
-      rowClick: function(e: Event, row: Tabulator.RowComponent) {
-        console.log('defaults this',this,'vm',vm,e,row)
-        vm.$emit('row-click',e,row)
-      },
-      rowDblClick: function(e: Event, row: Tabulator.RowComponent) {
-        vm.$emit('row-dbl-click',e,row)
-      },
-      rowContext: function(e: Event, row: Tabulator.RowComponent) {
-        vm.$emit('row-context',e,row)
-      },
-      rowTap: function(e: Event, row: Tabulator.RowComponent) {
-        vm.$emit('row-tap',e,row)
-      },
-      rowDblTap: function(e: Event, row: Tabulator.RowComponent) {
-        vm.$emit('row-dbl-tap',e,row)
-      },
-      rowMouseEnter: function(e: Event, row: Tabulator.RowComponent) {
-        vm.$emit('row-mouse-enter',e,row)
-      },
-      rowMouseLeave: function(e: Event, row: Tabulator.RowComponent) {
-        vm.$emit('row-mouse-leave',e,row)
-      },
-      rowMouseOver: function(e: Event, row: Tabulator.RowComponent) {
-        vm.$emit('row-mouse-over',e,row)
-      },
-      rowMouseOut: function(e: Event, row: Tabulator.RowComponent) {
-        vm.$emit('row-mouse-out',e,row)
-      },
-      rowMouseMove: function(e: Event, row: Tabulator.RowComponent) {
-        vm.$emit('row-mouse-move',e,row)
-      },
-      rowAdded: function(row: Tabulator.RowComponent) {
-        vm.$emit('row-added',row)
-      },
-      rowUpdated: function(row: Tabulator.RowComponent) {
-        vm.$emit('row-updated',row)
-      },
-      rowDeleted: function(row: Tabulator.RowComponent) {
-        vm.$emit('row-deleted',row)
-      },
-      rowMoved: function(row: Tabulator.RowComponent) {
-        vm.$emit('row-moved',row)
-      },
-      rowResized: function(row: Tabulator.RowComponent) {
-        vm.$emit('row-resized',row)
-      },
-    }
+  get eventOptions(): Object {
+    const events = eventFactory.bind(this)
+    return {...events(rowEvents), ...events(cellEvents)}
   }
 
   @Prop({ default: () => ({}) })
@@ -98,14 +54,9 @@ export default class TabulatorComponent extends Vue {
   @Watch('options', { deep: true })
   private updateOptions() {
     const vm = this
-    function customMergeFn(objValue: any, srcValue: any, key: string): any | undefined {
-      if (typeof objValue == "function" && typeof srcValue == "function") {
-        return joint([objValue, srcValue])
-      }
-    }
-
+    
     this.resolvedOptions = {
-      ...mergeWith(this.eventOptions, this.options, customMergeFn),
+      ...mergeWith(this.eventOptions, this.options, merge),
       data: this.tableData,
     };
 

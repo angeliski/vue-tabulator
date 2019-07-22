@@ -31,7 +31,7 @@ Hi! I'm really excited that you are interested in contributing to VueTabulator. 
 
 ## Development Setup
 
-You will need [Node.js](http://nodejs.org) **version 8+**.
+You will need [Node.js](http://nodejs.org) **version 10+**.
 We should use [yarn](https://yarnpkg.com).
 
 After cloning the repo, run:

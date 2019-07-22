@@ -2,6 +2,7 @@
   "name": "vue-tabulator",
   "description": "The best way to use Tabulator in Vue projects",
   "version": "1.0.0",
+  "engines" : { "node" : ">=10" },
   "scripts": {
     "release": "release-it",
     "release:rc": "npm run release -- --preRelease=rc",
@@ -61,6 +62,7 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
+    "@typescript-eslint/parser": "^1.13.0",
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-plugin-e2e-cypress": "^3.0.5",
     "@vue/cli-plugin-eslint": "^3.0.5",
@@ -78,7 +80,8 @@
     "coveralls": "^3.0.3",
     "cz-conventional-changelog": "3.0.2",
     "eslint": "^6.1.0",
-    "eslint-plugin-vue": "^5.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-vue": "^5.2.3",
     "lint-staged": "^9.2.0",
     "node-sass": "^4.9.0",
     "release-it": "^12.3.3",

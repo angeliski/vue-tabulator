@@ -57,4 +57,4 @@ You can see another docs in [documetation](https://vue-tabulator.netlify.com/).
 
 ## Develop Contributing
 
-See [CONTRIBUTING](./.github/CONTRIBUTING).
+See [CONTRIBUTING](./.github/CONTRIBUTING.md).

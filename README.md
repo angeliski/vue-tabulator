@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/angeliski/vue-tabulator.svg?branch=master)](https://travis-ci.org/angeliski/vue-tabulator) [![Coverage Status](https://coveralls.io/repos/github/angeliski/vue-tabulator/badge.svg?branch=master)](https://coveralls.io/github/angeliski/vue-tabulator?branch=master)
+[![Build Status](https://travis-ci.org/angeliski/vue-tabulator.svg?branch=master)](https://travis-ci.org/angeliski/vue-tabulator) [![Coverage Status](https://coveralls.io/repos/github/angeliski/vue-tabulator/badge.svg?branch=master)](https://coveralls.io/github/angeliski/vue-tabulator?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/angeliski/vue-tabulator.svg)](https://greenkeeper.io/)
 
 # ![logo](./docs/.vuepress/public/assets/img/logo.png)
 

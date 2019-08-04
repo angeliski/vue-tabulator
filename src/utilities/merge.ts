@@ -4,4 +4,5 @@ export default function merge(objValue: any, srcValue: any, key: string): any | 
   if (typeof objValue == "function" && typeof srcValue == "function") {
     return joint([objValue, srcValue])
   }
+  return
 }

@@ -49,19 +49,23 @@ import VueTabulator from './components/TabulatorComponent.vue';
 export default class App extends Vue {
   public data = [{ name: 'Teste', age: 13 }];
 
-  public options = {
-    columns: [
-      {
-        title: 'Name',
-        field: 'name',
-        sorter: 'string',
-        width: 200,
-        editor: true,
-      },
-    ],
+  get options() {
+    const vm = this
+    return {
+      columns: [
+        {
+          title: 'Name',
+          field: 'name',
+          sorter: 'string',
+          width: 200,
+          editor: true,
+        },
+      ],
       rowClick: function(e: Event, row: Tabulator.RowComponent) {
-        console.log('I clicked a row',this,e,row)
+        console.log('I clicked a row',vm,e,row)
+        vm.newRow()
       }
+    }
   };
 
   updateRow() {

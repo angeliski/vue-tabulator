@@ -1,7 +1,7 @@
-import { TabulatorComponent } from "@/entry";
+import Vue from 'vue'
 import dashify from 'dashify'
 
-export default function (this: TabulatorComponent, events: string[]): Object {
+export default function (this: Vue, events: string[]): Object {
   const vm = this
   let obj: {[index:string] : {}} = {}
   events.forEach(event => {

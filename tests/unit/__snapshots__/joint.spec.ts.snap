@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TabulatorComponent.vue Init table renders correct based in the options 1`] = `
+<div class="tabulator" role="grid" tabulator-layout="fitData">
+  <div class="tabulator-header" style="padding-right: 0px;">
+    <div class="tabulator-headers" style="margin-left: 0px;">
+      <div class="tabulator-col tabulator-sortable" role="columnheader" aria-sort="none" tabulator-field="name" style="min-width: 40px; width: 200px;" title="">
+        <div class="tabulator-col-content">
+          <div class="tabulator-col-title">Name</div>
+          <div class="tabulator-arrow"></div>
+        </div>
+        <div class="tabulator-col-resize-handle"></div>
+        <div class="tabulator-col-resize-handle prev"></div>
+      </div>
+    </div>
+    <div class="tabulator-frozen-rows-holder"></div>
+  </div>
+  <div class="tabulator-tableHolder" tabindex="0">
+    <div class="tabulator-table"></div>
+  </div>
+</div>
+`;

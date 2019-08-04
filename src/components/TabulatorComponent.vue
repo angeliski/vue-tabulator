@@ -13,10 +13,10 @@ import {
 import { IntegrationOptions, UpdateStrategy } from '@/types';
 import mergeWith from 'lodash.mergewith'
 import merge from '../utilities/merge'
-import eventFactory from '../assets/js/event-factory'
-import cellEvents from '../assets/js/cell-events'
-import rowEvents from '../assets/js/row-events'
 const Tabulator = require('tabulator-tables');
+import eventFactory from '../feature/event-factory'
+import cellEvents from '../feature/events/cell-events'
+import rowEvents from '../feature/events/row-events'
 
 @Component({
   name: 'TabulatorComponent',
@@ -53,7 +53,6 @@ export default class TabulatorComponent extends Vue {
 
   @Watch('options', { deep: true })
   private updateOptions() {
-    const vm = this
     
     this.resolvedOptions = {
       ...mergeWith(this.eventOptions, this.options, merge),

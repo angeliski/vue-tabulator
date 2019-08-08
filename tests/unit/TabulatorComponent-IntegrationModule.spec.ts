@@ -4,12 +4,14 @@ import { UpdateStrategy } from '@/types';
 
 const mockSetData = jest.fn();
 const mockReplaceData = jest.fn();
+const mockUpdateData = jest.fn();
+
 jest.mock('tabulator-tables', () => jest.fn().mockImplementation(() => ({
   setData: mockSetData,
   replaceData: mockReplaceData,
+  updateData: mockUpdateData,
 })));
 const Tabulator = require('tabulator-tables');
-
 
 const options : Tabulator.Options = {
   columns: [
@@ -29,6 +31,7 @@ describe('TabulatorComponent.vue | Integration Module', () => {
     Tabulator.mockClear();
     mockSetData.mockClear();
     mockReplaceData.mockClear();
+    mockUpdateData.mockClear();
   });
 
   describe('Watchers', () => {
@@ -65,6 +68,26 @@ describe('TabulatorComponent.vue | Integration Module', () => {
 
       expect(mockSetData).not.toHaveBeenCalled();
       expect(mockReplaceData).toHaveBeenCalled();
+    });
+
+    test('update de v-model should use UpdateStrategy.UPDATE', () => {
+      const wrapper = mount(TabulatorComponent, {
+        propsData: {
+          tableData: [{ id: 1, name: 'Someone to update' }],
+          options,
+          integration: {
+            updateStrategy: UpdateStrategy.UPDATE,
+          },
+        },
+      });
+
+      wrapper.setProps({
+        tableData: [{ id: 1, name: 'Someone updated' }],
+      });
+
+      expect(mockSetData).not.toHaveBeenCalled();
+      expect(mockReplaceData).not.toHaveBeenCalled();
+      expect(mockUpdateData).toHaveBeenCalled();
     });
   });
 });

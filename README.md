@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/angeliski/vue-tabulator.svg?branch=master)](https://travis-ci.org/angeliski/vue-tabulator) [![Coverage Status](https://coveralls.io/repos/github/angeliski/vue-tabulator/badge.svg?branch=master)](https://coveralls.io/github/angeliski/vue-tabulator?branch=master)
+[![Build Status](https://travis-ci.org/angeliski/vue-tabulator.svg?branch=master)](https://travis-ci.org/angeliski/vue-tabulator) [![Coverage Status](https://coveralls.io/repos/github/angeliski/vue-tabulator/badge.svg?branch=master)](https://coveralls.io/github/angeliski/vue-tabulator?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/angeliski/vue-tabulator.svg)](https://greenkeeper.io/)
 
 # ![logo](./docs/.vuepress/public/assets/img/logo.png)
 
@@ -57,4 +57,4 @@ You can see another docs in [documetation](https://vue-tabulator.netlify.com/).
 
 ## Develop Contributing
 
-See [CONTRIBUTING](./.github/CONTRIBUTING).
+See [CONTRIBUTING](./.github/CONTRIBUTING.md).

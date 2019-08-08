@@ -107,7 +107,8 @@ providing a better way to control internal behavior.
 
 The update strategy is responsible for how data is updated in the Tabulator instance. The default value is `DATA`.
 
-You can change the update strategy to `REPLACE` in order to use the method [setReplace](http://tabulator.info/docs/4.2/update#alter-replace).
+- You can change the update strategy to `REPLACE` in order to use the method [setReplace](http://tabulator.info/docs/4.2/update#alter-replace).
+- You can change the update strategy to `UPDATE` in order to use the method [updateData](http://tabulator.info/docs/4.2/update#alter-update).
 
 ```html
 <VueTabulator 
@@ -116,6 +117,11 @@ You can change the update strategy to `REPLACE` in order to use the method [setR
         :integration="{ updateStrategy: 'REPLACE' }" 
   />
 ```
+
+::: warning Use update in editable tables
+To avoid [problems](https://github.com/angeliski/vue-tabulator/issues/13) prefer use `UPDATE` strategy on editable tables
+:::
+
 
 ## Advanced Interaction
 

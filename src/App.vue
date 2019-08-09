@@ -48,11 +48,7 @@ import VueTabulator from './components/TabulatorComponent.vue';
 })
 export default class App extends Vue {
   public data = [{ name: 'Teste', age: 13 }];
-
-  get options() {
-    const vm = this
-    return {
-      columns: [
+  public columns = [
         {
           title: 'Name',
           field: 'name',
@@ -60,7 +56,12 @@ export default class App extends Vue {
           width: 200,
           editor: true,
         },
-      ],
+      ]
+
+  get options() {
+    const vm = this
+    return {
+      columns: this.columns,
       rowClick: function(e: Event, row: Tabulator.RowComponent) {
         console.log('I clicked a row',vm,e,row)
         vm.newRow()

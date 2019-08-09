@@ -67,6 +67,9 @@ export default class TabulatorComponent extends Vue {
     if (this.tabulatorInstance) {
       if (this.integration && this.integration.updateStrategy === UpdateStrategy.REPLACE) {
         this.tabulatorInstance.replaceData(this.tableData);
+      } else if (this.integration && this.tableData
+      && this.integration.updateStrategy === UpdateStrategy.UPDATE) {
+        this.tabulatorInstance.updateData(this.tableData);
       } else {
         this.tabulatorInstance.setData(this.tableData);
       }

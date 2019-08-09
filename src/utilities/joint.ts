@@ -22,7 +22,7 @@ export default function joint(a: Function[]): Function {
     [C] = a;
   }
 
-  return (...args: any[]) => {
+  return function joined(...args: any[]) {
     b.apply(new C(...args), args);
   };
 }

@@ -121,7 +121,30 @@ The update strategy is responsible for how data is updated in the Tabulator inst
 ::: warning Use update in editable tables
 To avoid [problems](https://github.com/angeliski/vue-tabulator/issues/13) prefer use `UPDATE` strategy on editable tables
 :::
+## Events
+The Callbacks Tabulator will be avaliable in the vue-way:
 
+  - Table Callbacks (Soon)
+  - Column Callbacks (Soon)
+  - Data Callbacks (Soon)
+  - Ajax Callbacks (Soon)
+  - Filter Callbacks (Soon)
+  - Sorting Callbacks (Soon)
+  - Layout Callbacks (Soon)
+  - Pagination Callbacks (Soon)
+  - Group Callbacks (Soon)
+  - Selection Callbacks (Soon)
+  - Row Movement Callbacks (Soon)
+  - Validation Callbacks (Soon)
+  - History Callbacks (Soon)
+  - Clipboard Callbacks (Soon)
+  - Download Callbacks (Soon)
+  - Data Tree Callbacks (Soon)
+
+### Row Callbacks 
+- (Available in Release 1.2.0)
+### Cell Callbacks 
+- (Available in Release 1.2.0)
 
 ## Advanced Interaction
 

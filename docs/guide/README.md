@@ -122,8 +122,49 @@ The update strategy is responsible for how data is updated in the Tabulator inst
 To avoid [problems](https://github.com/angeliski/vue-tabulator/issues/13) prefer use `UPDATE` strategy on editable tables
 :::
 ## Events
-The Callbacks Tabulator will be avaliable in the vue-way:
 
+All events in Tabulator follow CamelCase convention, but the events in vue-tabulator will follow the kebab-case:
+
+`rowClick -> row-click`
+
+:::tip
+You can use the options object next to the vue event system to configure your instance.
+The vue-tabulator will call both methods: first emit the event then run the callback in the options object.
+:::
+
+### Row Callbacks 
+- (Available in Release 1.2.0)
+
+You can see all events available [here](http://tabulator.info/docs/4.4/callbacks#row). 
+ 
+ The events will be emitted in the root component:
+
+```html{5}
+<VueTabulator 
+        v-model="data" 
+        :options="options" 
+        :integration="{ updateStrategy: 'REPLACE' }" 
+        @row-click="myMethod"
+  />
+```
+
+### Cell Callbacks 
+- (Available in Release 1.2.0)
+
+You can see all events available [here](http://tabulator.info/docs/4.4/callbacks#cell). 
+ 
+ The events will be emitted in the root component:
+
+```html{5}
+<VueTabulator 
+        v-model="data" 
+        :options="options" 
+        :integration="{ updateStrategy: 'REPLACE' }" 
+        @cell-click="myMethod"
+  />
+```
+
+The Callbacks Tabulator will be soon available in the vue-way:
   - Table Callbacks (Soon)
   - Column Callbacks (Soon)
   - Data Callbacks (Soon)
@@ -141,10 +182,6 @@ The Callbacks Tabulator will be avaliable in the vue-way:
   - Download Callbacks (Soon)
   - Data Tree Callbacks (Soon)
 
-### Row Callbacks 
-- (Available in Release 1.2.0)
-### Cell Callbacks 
-- (Available in Release 1.2.0)
 
 ## Advanced Interaction
 

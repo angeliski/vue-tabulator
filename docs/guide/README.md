@@ -7,7 +7,7 @@ How we can make Tabulator better?
 
 Welcome Vue-Tabulator.
 
-## Getting Started
+## Installation
 
 Vue-tabulator is a wrapper to Tabulator, so you need to [install tabulator](http://tabulator.info/docs/4.2/install#sources-npm) to use vue-tabulator.
 
@@ -79,6 +79,47 @@ export default {
   },
   
 };
+```
+
+### Browser
+You can import the vue-tabulator in your browser:
+
+```html
+<script src="https://unpkg.com/vue@latest"></script>
+
+<link href="https://unpkg.com/tabulator-tables@4.4.1/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.4.1/dist/js/tabulator.min.js"></script>
+<script src="https://unpkg.com/vue-tabulator@latest"></script>
+
+<div id="app">
+    <h1>Vue Tabulator</h1>
+    <Vue-Tabulator v-model="dados" :options="options" />
+  </div>
+
+
+<script>
+new Vue({
+    el: '#app',
+    data() {
+        return {
+            dados: [{
+                name: 'Teste',
+                age: 13
+            }],
+            options: {
+                columns: [{
+                    title: 'Name',
+                    field: 'name',
+                    sorter: 'string',
+                    width: 200,
+                    editor: true,
+                }, ],
+            }
+        }
+    }
+});
+</script>
+
 ```
 
 ## Options

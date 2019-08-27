@@ -106,6 +106,7 @@
   ],
   "main": "./dist/vue-tabulator.umd.js",
   "browser": "./dist/vue-tabulator.common.js",
+  "unpkg": "./dist/vue-tabulator.umd.min.js",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

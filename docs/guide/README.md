@@ -7,7 +7,7 @@ How we can make Tabulator better?
 
 Welcome Vue-Tabulator.
 
-## Getting Started
+## Installation
 
 Vue-tabulator is a wrapper to Tabulator, so you need to [install tabulator](http://tabulator.info/docs/4.2/install#sources-npm) to use vue-tabulator.
 
@@ -81,6 +81,47 @@ export default {
 };
 ```
 
+### Browser
+You can import the vue-tabulator in your browser:
+
+```html
+<script src="https://unpkg.com/vue@latest"></script>
+
+<link href="https://unpkg.com/tabulator-tables@4.4.1/dist/css/tabulator.min.css" rel="stylesheet">
+<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.4.1/dist/js/tabulator.min.js"></script>
+<script src="https://unpkg.com/vue-tabulator@latest"></script>
+
+<div id="app">
+    <h1>Vue Tabulator</h1>
+    <Vue-Tabulator v-model="dados" :options="options" />
+  </div>
+
+
+<script>
+new Vue({
+    el: '#app',
+    data() {
+        return {
+            dados: [{
+                name: 'Teste',
+                age: 13
+            }],
+            options: {
+                columns: [{
+                    title: 'Name',
+                    field: 'name',
+                    sorter: 'string',
+                    width: 200,
+                    editor: true,
+                }, ],
+            }
+        }
+    }
+});
+</script>
+
+```
+
 ## Options
 
 The options object can accept any [Tabulator options](http://tabulator.info/docs/4.2/options), which allows you to use the full power of Tabulator on start or configuration.
@@ -121,6 +162,66 @@ The update strategy is responsible for how data is updated in the Tabulator inst
 ::: warning Use update in editable tables
 To avoid [problems](https://github.com/angeliski/vue-tabulator/issues/13) prefer use `UPDATE` strategy on editable tables
 :::
+## Events
+
+All events in Tabulator follow CamelCase convention, but the events in vue-tabulator will follow the kebab-case:
+
+`rowClick -> row-click`
+
+:::tip
+You can use the options object next to the vue event system to configure your instance.
+The vue-tabulator will call both methods: first emit the event then run the callback in the options object.
+:::
+
+### Row Callbacks 
+- (Available in Release 1.2.0)
+
+You can see all events available [here](http://tabulator.info/docs/4.4/callbacks#row). 
+ 
+ The events will be emitted in the root component:
+
+```html{5}
+<VueTabulator 
+        v-model="data" 
+        :options="options" 
+        :integration="{ updateStrategy: 'REPLACE' }" 
+        @row-click="myMethod"
+  />
+```
+
+### Cell Callbacks 
+- (Available in Release 1.2.0)
+
+You can see all events available [here](http://tabulator.info/docs/4.4/callbacks#cell). 
+ 
+ The events will be emitted in the root component:
+
+```html{5}
+<VueTabulator 
+        v-model="data" 
+        :options="options" 
+        :integration="{ updateStrategy: 'REPLACE' }" 
+        @cell-click="myMethod"
+  />
+```
+
+The Callbacks Tabulator will be soon available in the vue-way:
+  - Table Callbacks (Soon)
+  - Column Callbacks (Soon)
+  - Data Callbacks (Soon)
+  - Ajax Callbacks (Soon)
+  - Filter Callbacks (Soon)
+  - Sorting Callbacks (Soon)
+  - Layout Callbacks (Soon)
+  - Pagination Callbacks (Soon)
+  - Group Callbacks (Soon)
+  - Selection Callbacks (Soon)
+  - Row Movement Callbacks (Soon)
+  - Validation Callbacks (Soon)
+  - History Callbacks (Soon)
+  - Clipboard Callbacks (Soon)
+  - Download Callbacks (Soon)
+  - Data Tree Callbacks (Soon)
 
 
 ## Advanced Interaction

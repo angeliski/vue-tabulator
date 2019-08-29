@@ -6,6 +6,7 @@ module.exports = {
     '!**/node_modules/**',
     '!**/App.vue',
     '!**/main.ts',
+    '!**/entry.ts',
   ],
   moduleFileExtensions: [
     'js',

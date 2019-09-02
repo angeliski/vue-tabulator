@@ -4,7 +4,7 @@ const cellEvents: string[] = [
   'cellContext',
   'cellTap',
   'cellDblTap',
-  'cellTapHOld',
+  'cellTapHold',
   'cellMouseEnter',
   'cellMouseLeave',
   'cellMouseOver',

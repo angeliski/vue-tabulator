@@ -58,12 +58,11 @@
     "@types/tabulator-tables": "^4.2.4",
     "dashify": "^2.0.0",
     "lodash.mergewith": "^4.6.2",
-    "tabulator-tables": "^4.2.2",
     "vue-class-component": "^7.1.0",
     "vue-property-decorator": "^8.2.1"
   },
   "peerDependencies": {
-    "tabulator-tables": "^4.2.1",
+    "tabulator-tables": "^4.4.1",
     "vue": "^2.6.8"
   },
   "devDependencies": {

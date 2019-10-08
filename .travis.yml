@@ -11,5 +11,6 @@ cache:
   directories:
     - ~/.cache
 script:
+  - npx @team-griffin/install-self-peers
   - npm run test
   - npm run coveralls

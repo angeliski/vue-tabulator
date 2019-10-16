@@ -68,7 +68,7 @@
     "@typescript-eslint/parser": "^2.0.0",
     "@vue/cli-plugin-babel": "^3.0.5",
     "@vue/cli-plugin-e2e-cypress": "^3.0.5",
-    "@vue/cli-plugin-eslint": "^3.0.5",
+    "@vue/cli-plugin-eslint": "^4.0.0",
     "@vue/cli-plugin-typescript": "^3.0.5",
     "@vue/cli-plugin-unit-jest": "^3.0.5",
     "@vue/cli-service": "^3.0.5",

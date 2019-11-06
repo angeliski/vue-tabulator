@@ -13,6 +13,6 @@ const cellEvents: string[] = [
   'cellEditing',
   'cellEditCancelled',
   'cellEdited',
-]
+];
 
-export default cellEvents
+export default cellEvents;

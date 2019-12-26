@@ -87,7 +87,7 @@
     "cz-conventional-changelog": "3.0.2",
     "eslint": "^5.16.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-vue": "^5.2.3",
+    "eslint-plugin-vue": "^6.0.2",
     "lint-staged": "^9.4.2",
     "node-sass": "^4.13.0",
     "release-it": "^12.4.3",

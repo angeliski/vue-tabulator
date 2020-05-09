@@ -92,7 +92,7 @@
     "node-sass": "^4.13.0",
     "release-it": "^12.4.3",
     "sass-loader": "^8.0.0",
-    "ts-jest": "^24.1.0",
+    "ts-jest": "^25.5.1",
     "typescript": "~3.6.4",
     "vue-template-compiler": "^2.6.10",
     "vuepress": "^1.2.0",

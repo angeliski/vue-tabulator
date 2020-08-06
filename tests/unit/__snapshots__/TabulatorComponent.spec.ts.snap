@@ -15,7 +15,7 @@ exports[`TabulatorComponent.vue Init table renders correct based in the options 
     </div>
     <div class="tabulator-frozen-rows-holder"></div>
   </div>
-  <div class="tabulator-tableHolder" tabindex="0">
+  <div class="tabulator-tableHolder" tabindex="0" style="height: 0px;">
     <div class="tabulator-table"></div>
   </div>
 </div>

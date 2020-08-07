@@ -55,7 +55,7 @@ export default class TabulatorComponent extends Vue {
   @Watch('options', { deep: true })
   private updateOptions() {
     this.resolvedOptions = {
-      ...mergeWith(this.eventOptions, this.options, merge),
+      ...mergeWith({}, this.eventOptions, this.options, merge),
       data: this.tableData,
     };
 

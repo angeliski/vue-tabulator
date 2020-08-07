@@ -1,6 +1,7 @@
 import { shallowMount, mount } from '@vue/test-utils';
 import TabulatorComponent from '@/components/TabulatorComponent.vue';
 import { getInstance } from './helpers';
+import Vue from 'vue';
 
 describe('TabulatorComponent.vue', () => {
   describe('Init table', () => {
@@ -29,7 +30,7 @@ describe('TabulatorComponent.vue', () => {
     });
   });
   describe('Watchers', () => {
-    test('update the config should recreate the table', () => {
+    test('update the config should recreate the table', async () => {
       const options : Tabulator.Options = {
         columns: [
           {
@@ -60,6 +61,7 @@ describe('TabulatorComponent.vue', () => {
           ],
         },
       });
+      await Vue.nextTick();
       const currentInstance = getInstance(wrapper);
 
       expect(oldInstance).not.toBe(currentInstance);

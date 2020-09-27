@@ -1,7 +1,7 @@
 import { shallowMount, mount } from '@vue/test-utils';
+import Vue from 'vue';
 import TabulatorComponent from '@/components/TabulatorComponent.vue';
 import { UpdateStrategy } from '@/types';
-import Vue from 'vue';
 
 const mockSetData = jest.fn();
 const mockReplaceData = jest.fn();

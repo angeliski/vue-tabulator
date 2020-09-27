@@ -1,6 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils';
-import TabulatorComponent from '@/components/TabulatorComponent.vue';
 import Vue from 'vue';
+import TabulatorComponent from '@/components/TabulatorComponent.vue';
 import { getInstance } from './helpers';
 
 describe('TabulatorComponent.vue', () => {

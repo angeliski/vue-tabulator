@@ -6,8 +6,12 @@ exports[`TabulatorComponent.vue Init table renders correct based in the options 
     <div class="tabulator-headers" style="margin-left: 0px;">
       <div class="tabulator-col tabulator-sortable" role="columnheader" aria-sort="none" tabulator-field="name" style="min-width: 40px; width: 200px;" title="">
         <div class="tabulator-col-content">
-          <div class="tabulator-col-title">Name</div>
-          <div class="tabulator-arrow"></div>
+          <div class="tabulator-col-title-holder">
+            <div class="tabulator-col-title">Name</div>
+            <div class="tabulator-col-sorter">
+              <div class="tabulator-arrow"></div>
+            </div>
+          </div>
         </div>
         <div class="tabulator-col-resize-handle"></div>
         <div class="tabulator-col-resize-handle prev"></div>

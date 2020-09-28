@@ -10,6 +10,8 @@
 import {
   Component, Prop, Vue, Watch, Model,
 } from 'vue-property-decorator';
+import Tabulator from 'tabulator-tables';
+
 import mergeWith from 'lodash.mergewith';
 import { IntegrationOptions, UpdateStrategy } from '@/types';
 import merge from '../utilities/merge';
@@ -17,7 +19,6 @@ import eventFactory from '../feature/event-factory';
 import cellEvents from '../feature/events/cell-events';
 import rowEvents from '../feature/events/row-events';
 
-const Tabulator = require('tabulator-tables');
 
 @Component({
   name: 'TabulatorComponent',
@@ -47,7 +48,7 @@ export default class TabulatorComponent extends Vue {
 
   private createTable() {
     this.tabulatorInstance = new Tabulator(
-      this.$refs.table,
+      (this.$refs.table as HTMLElement),
       this.resolvedOptions,
     );
   }

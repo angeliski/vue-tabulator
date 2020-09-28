@@ -15,6 +15,6 @@ const rowEvents: string[] = [
   'rowDeleted',
   'rowMoved',
   'rowResized',
-]
+];
 
-export default rowEvents
+export default rowEvents;

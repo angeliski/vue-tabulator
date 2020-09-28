@@ -1,4 +1,5 @@
 import { shallowMount, mount } from '@vue/test-utils';
+import Vue from 'vue';
 import TabulatorComponent from '@/components/TabulatorComponent.vue';
 import { UpdateStrategy } from '@/types';
 
@@ -35,7 +36,7 @@ describe('TabulatorComponent.vue | Integration Module', () => {
   });
 
   describe('Watchers', () => {
-    test('update the v-model should use UpdateStrategy.DATA for default', () => {
+    test('update the v-model should use UpdateStrategy.DATA for default', async () => {
       const wrapper = mount(TabulatorComponent, {
         propsData: {
           options,
@@ -47,10 +48,11 @@ describe('TabulatorComponent.vue | Integration Module', () => {
         tableData: [],
       });
 
+      await Vue.nextTick();
       expect(mockSetData).toHaveBeenCalled();
     });
 
-    test('update the v-model should use UpdateStrategy.REPLACE', () => {
+    test('update the v-model should use UpdateStrategy.REPLACE', async () => {
       const wrapper = mount(TabulatorComponent, {
         propsData: {
           tableData: [{ name: 'Pi' }],
@@ -66,11 +68,12 @@ describe('TabulatorComponent.vue | Integration Module', () => {
         tableData: [],
       });
 
+      await Vue.nextTick();
       expect(mockSetData).not.toHaveBeenCalled();
       expect(mockReplaceData).toHaveBeenCalled();
     });
 
-    test('update de v-model should use UpdateStrategy.UPDATE', () => {
+    test('update de v-model should use UpdateStrategy.UPDATE', async () => {
       const wrapper = mount(TabulatorComponent, {
         propsData: {
           tableData: [{ id: 1, name: 'Someone to update' }],
@@ -85,6 +88,7 @@ describe('TabulatorComponent.vue | Integration Module', () => {
         tableData: [{ id: 1, name: 'Someone updated' }],
       });
 
+      await Vue.nextTick();
       expect(mockSetData).not.toHaveBeenCalled();
       expect(mockReplaceData).not.toHaveBeenCalled();
       expect(mockUpdateData).toHaveBeenCalled();

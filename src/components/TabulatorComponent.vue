@@ -10,13 +10,14 @@
 import {
   Component, Prop, Vue, Watch, Model,
 } from 'vue-property-decorator';
+import mergeWith from 'lodash.mergewith';
 import { IntegrationOptions, UpdateStrategy } from '@/types';
-import mergeWith from 'lodash.mergewith'
-import merge from '../utilities/merge'
+import merge from '../utilities/merge';
+import eventFactory from '../feature/event-factory';
+import cellEvents from '../feature/events/cell-events';
+import rowEvents from '../feature/events/row-events';
+
 const Tabulator = require('tabulator-tables');
-import eventFactory from '../feature/event-factory'
-import cellEvents from '../feature/events/cell-events'
-import rowEvents from '../feature/events/row-events'
 
 @Component({
   name: 'TabulatorComponent',
@@ -28,8 +29,8 @@ export default class TabulatorComponent extends Vue {
   private tabulatorInstance: Tabulator | null = null;
 
   get eventOptions(): Object {
-    const events = eventFactory.bind(this)
-    return {...events(rowEvents), ...events(cellEvents)}
+    const events = eventFactory.bind(this);
+    return { ...events(rowEvents), ...events(cellEvents) };
   }
 
   @Prop({ default: () => ({}) })
@@ -53,9 +54,8 @@ export default class TabulatorComponent extends Vue {
 
   @Watch('options', { deep: true })
   private updateOptions() {
-    
     this.resolvedOptions = {
-      ...mergeWith(this.eventOptions, this.options, merge),
+      ...mergeWith({}, this.eventOptions, this.options, merge),
       data: this.tableData,
     };
 

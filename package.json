@@ -55,7 +55,7 @@
   "dependencies": {
     "@types/dashify": "^1.0.0",
     "@types/lodash.mergewith": "^4.6.6",
-    "@types/tabulator-tables": "4.8.0",
+    "@types/tabulator-tables": "^5",
     "core-js": "^3.3.6",
     "dashify": "^2.0.0",
     "lodash.mergewith": "^4.6.2",
@@ -63,7 +63,7 @@
     "vue-property-decorator": "^8.3.0"
   },
   "peerDependencies": {
-    "tabulator-tables": "4.8.1",
+    "tabulator-tables": "^5",
     "vue": "^2.6.12",
     "vue-template-compiler": "^2.6.12"
   },
@@ -90,7 +90,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-vue": "^5.2.3",
     "lint-staged": "^9.4.2",
-    "node-sass": "^4.14.1",
+    "sass": "^1.44",
     "release-it": "^12.4.3",
     "sass-loader": "^10.0.2",
     "ts-jest": "^24.1.0",
